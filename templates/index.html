@@ -41,7 +41,7 @@
           <h2 class="{{link ['slug']}}">{{ link['title'] }}</h2>
             {% for article in articles %}
                 {% if link['slug'] == article['topic'] %}
-                <a href="{{'site/{}'.format(article['source'].replace('md','html'))}}">{{article ['title']}}</a> </br>
+                <a href="{{'site/{}'.format(article['source'].replace('md','html'))|e}}">{{article ['title']|e}}</a> </br>
                 {% endif %}
             {% endfor %}
         </div>
