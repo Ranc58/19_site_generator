@@ -11,15 +11,15 @@ def load_json_content(json_file):
 
 
 def create_site_structure(structure):
-    if not os.path.exists('site_html'):
-        os.mkdir('site_html')
-    if not os.path.exists('site_html/css'):
-        shutil.copytree('templates/css', 'site_html/css')
+    if not os.path.exists('site'):
+        os.mkdir('site')
+    if not os.path.exists('site/css'):
+        shutil.copytree('templates/css', 'site/css')
     for dir in structure['articles']:
         article = dir['source']
         adrticle_dir_name = os.path.split(article)[0]
-        if not os.path.exists('site_html/{}'.format(adrticle_dir_name)):
-            os.mkdir('site_html/{}'.format(adrticle_dir_name))
+        if not os.path.exists('site/{}'.format(adrticle_dir_name)):
+            os.mkdir('site/{}'.format(adrticle_dir_name))
 
 
 def create_main_page(structure):
@@ -32,7 +32,7 @@ def create_main_page(structure):
     topics = structure['topics']
     articles = structure['articles']
     data = {'links': topics, 'articles': articles}
-    with open("site_html/index.html", "w") as f:
+    with open("index.html", "w") as f:
         f.write(template.render(data))
 
 
@@ -60,7 +60,7 @@ def create_articles(structure, html):
         content = html
         data = {'title': title, 'content': content}
         root, ext = os.path.splitext(article['source'])
-        with open('site_html/{}.html'.format(root), "w") as f:
+        with open('site/{}.html'.format(root), "w") as f:
             f.write(template.render(data))
 
 
