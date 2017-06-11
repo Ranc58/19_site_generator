@@ -1,3 +1,4 @@
+
 import os
 import shutil
 import json
@@ -25,7 +26,7 @@ def create_site_structure(structure):
 def create_main_page(structure):
     loader = FileSystemLoader('templates',
                               followlinks=True,
-                              encoding='Windows-1251')
+                              encoding='utf-8')
     env = Environment(loader=loader, trim_blocks=True,
                       lstrip_blocks=True)
     template = env.get_template('index.html')
@@ -49,8 +50,8 @@ def get_html_from_md(structure):
 
 def create_articles(structure, html):
     loader = FileSystemLoader('templates',
-                              followlinks=True,
-                              encoding='Windows-1251')
+                              followlinks=True
+                              )
     env = Environment(loader=loader, trim_blocks=True,
                       lstrip_blocks=True)
     template = env.get_template('article.html')
