@@ -36,7 +36,7 @@ def create_main_page(structure):
     with open("index.html", "w") as f:
         f.write(template.render(data))
 
-
+"""
 def get_html_from_md(structure):
     articles = structure['articles']
     for article in articles:
@@ -46,9 +46,9 @@ def get_html_from_md(structure):
         text = input_file.read()
         html = markdown.markdown(text)
         return html
+"""
 
-
-def create_articles(structure, html):
+def create_articles(structure):
     loader = FileSystemLoader('templates',
                               followlinks=True
                               )
@@ -57,8 +57,12 @@ def create_articles(structure, html):
     template = env.get_template('article.html')
     articles = structure['articles']
     for article in articles:
+        input_file = open('articles/{}'.format(article['source']),
+                          mode="r",
+                          encoding="utf-8")
+        text = input_file.read()
         title = article['title']
-        content = html
+        content = markdown.markdown(text)
         data = {'title': title, 'content': content}
         root, ext = os.path.splitext(article['source'])
         with open('site/{}.html'.format(root), "w") as f:
@@ -70,5 +74,5 @@ if __name__ == '__main__':
     structure = load_json_content(json_file)
     create_site_structure(structure)
     create_main_page(structure)
-    html=get_html_from_md(structure)
-    create_articles(structure, html)
+    create_articles(structure)
+
