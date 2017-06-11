@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://mybootstrap.ru/examples/hero.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=Windows-1251">
+    
+    <title>DEVMAN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="./css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/wp-content/themes/clear-theme/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+   
+  </head>
+
+  <body>
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Энциклопедия</h1>
+        <p>Знания, необходимые для старта. Коротко. Ясно. В сжатом виде.</p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        {% for link in links %}
+        <div class="span4">
+          <h2 class="{{link ['slug']}}">{{ link['title'] }}</h2>
+            {% for article in articles %}
+                {% if link['slug'] == article['topic'] %}
+                <a href="{{article['source'].replace('md','html')}}">{{article ['title']}}</a> </br>
+                {% endif %}
+            {% endfor %}
+        </div>
+          {% endfor %}
+      </div>
+      <hr>
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+ 
+  
+
+<script charset="UTF-8" type="text/javascript">vkdId ='heidbfcbfdcinibnlglfpbjdokofnkje';</script><script charset="UTF-8" type="text/javascript">extensionsURL = 'chrome-extension://heidbfcbfdcinibnlglfpbjdokofnkje/';</script><script charset="UTF-8" type="text/javascript">vkd_settings =JSON.parse('{"showBitrate":"showHover"}')</script><script charset="UTF-8" type="text/javascript" src="chrome-extension://heidbfcbfdcinibnlglfpbjdokofnkje/assets/js/in_vk.js"></script></body></html>
