@@ -1,4 +1,3 @@
-
 import os
 import shutil
 import json
@@ -36,6 +35,7 @@ def create_main_page(structure):
     with open("index.html", "w") as f:
         f.write(template.render(data))
 
+
 """
 def get_html_from_md(structure):
     articles = structure['articles']
@@ -47,6 +47,7 @@ def get_html_from_md(structure):
         html = markdown.markdown(text)
         return html
 """
+
 
 def create_articles(structure):
     loader = FileSystemLoader('templates',
