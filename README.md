@@ -14,7 +14,8 @@ This program create html site with DevMan wiki about Python by markdown articles
 If it is needed edit `config.json` and put .md files to dir `site` in necessary folder.\
 Then run program: `python3 create_site.py`.
 
-Structure of site for example:
+Example of final result: [Site](https://ranc58.github.io/19_site_generator/)\
+Structure:
 ```
 ├── index.html
 ├── site
