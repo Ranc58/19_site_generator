@@ -44,7 +44,7 @@ def get_index_page_content(structure, INDEX_CSS_PATHWAY):
     articles = structure['articles']
     content = {'links': topics,
                'articles': articles,
-               'css_pathfolder': INDEX_CSS_PATHWAY}
+               'index_css_folder': INDEX_CSS_PATHWAY}
     return content
 
 
