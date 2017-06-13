@@ -11,11 +11,11 @@ This program create html site with DevMan wiki about Python by markdown articles
    `pip3 install -r requirements.txt` (alternatively try add `sudo` before command)
 
 # How to use
-If it is needed edit `config.json` and put .md files to dir `site` in necessary folder.\
+If it's needed edit `config.json` and put .md files to dir `site` in necessary folder.\
 Then run program: `python3 create_site.py`.
 
-Example of final result: [Site](https://ranc58.github.io/19_site_generator/)\
-Structure:
+Example of final result: [DevMan Wiki](https://ranc58.github.io/19_site_generator/)\
+Example structure:
 ```
 ├── index.html
 ├── site
